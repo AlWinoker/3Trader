@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Aug 19 09:09:35 2022
+Created on Fri Aug 19 11:41:44 2022
 
 @author: 14015
 """
@@ -466,18 +466,26 @@ while True:
         
         price=round(askprice2+pricedifferencearray[-2]/10,2)
         buyordernumber = buyCrypto()
+       # print(price)
         #time.sleep(1)
         if type(buyordernumber)!=type(None):
             cancel(buyordernumber['orderId'])
             
         quantity = round(float(client.get_asset_balance(asset='BTC')['free']),6)
-        price=round(askprice2+pricedifferencearray[-2],2)
+        print(price)
+        #price=round(askprice2+pricedifferencearray[-2]/5,2)
+        price=round(price+0.01,2)
+        print(price)
         sellCrypto()
-        print(time.time()-timer)
+        #print(time.time()-timer)
         # if time.time()-timer>3600*8:
         #     timer = time.time()
         if a<10:
             cancelAll()
         print(a)
         
+   # askprice2 = getPriceBids(coin)
+
+    
+    
 
