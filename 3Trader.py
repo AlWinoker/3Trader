@@ -455,7 +455,7 @@ while True:
     accelerationarray.append(acceleration)
     
     jerk = accelerationarray[-1]-accelerationarray[-2]
-    if velocity>0 and acceleration>0 and jerk>0:
+    if velocity>0 and acceleration>0 and jerk>0 and pricedifferencearray[-2]>0:
         print([velocity,acceleration])
         
         a = float(client.get_asset_balance(asset='USDT')['free'])
